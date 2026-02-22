@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Career Report</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<script>
+window.onload = function() {
+    setTimeout(function(){
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("report").style.display = "block";
+    }, 2000);
+}
+</script>
+
+</head>
+
+<body>
+
+<div id="loading" class="loading">
+    <div class="ai-circle"></div>
+    <p>AI analyzing student profile...</p>
+</div>
+
+<div id="report" style="display:none">
+
+<div class="main">
+<div class="report-card">
+
+<h2>AI Career Intelligence Report</h2>
+
+<p><b>Student:</b> {{name}}</p>
+<p><b>Class:</b> {{current_class}}</p>
+
+<section>
+<h3>{{data.foundation_title}}</h3>
+<ul>
+{% for line in data.foundation_text %}
+<li>{{line}}</li>
+{% endfor %}
+</ul>
+</section>
+
+<section>
+<h3>Career Role</h3>
+<p>{{data.career_importance[goal]}}</p>
+</section>
+
+<section>
+<h3>Recommended Stream</h3>
+<p>{{data.streams[goal]}}</p>
+</section>
+
+<section>
+<h3>Why This Stream</h3>
+<p>{{data.stream_reason[goal]}}</p>
+</section>
+
+<section>
+<h3>Entrance Exams</h3>
+<ul>
+{% for exam in data.exams[goal] %}
+<li>{{exam}}</li>
+{% endfor %}
+</ul>
+</section>
+
+<section>
+<h3>Exam Purpose</h3>
+<p>{{data.exam_reason[goal]}}</p>
+</section>
+
+<section>
+<h3>Career Roadmap</h3>
+<p>{{data.roadmap[goal][11]}}</p>
+<p>{{data.roadmap[goal][12]}}</p>
+<p>{{data.roadmap[goal]["Degree"]}}</p>
+<p>{{data.roadmap[goal]["Future"]}}</p>
+</section>
+
+<section>
+<h3>Guidance for Parents</h3>
+<ul>
+{% for tip in data.parent %}
+<li>{{tip}}</li>
+{% endfor %}
+</ul>
+</section>
+
+<section class="final">
+<h3>Final AI Advice</h3>
+<p>{{data.final}}</p>
+</section>
+
+</div>
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Career Guidance</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="main">
+<div class="card">
+
+<h1>AI Career Guidance System</h1>
+
+<form action="/result" method="post">
+
+<label>Student Name</label>
+<input type="text" name="name" required>
+
+<label>Current Class</label>
+<input type="number" name="class" required>
+
+<label>Choose Career Goal</label>
+<select name="goal">
+<option value="1">Doctor</option>
+<option value="2">Engineer</option>
+<option value="3">Police</option>
+<option value="4">Teacher</option>
+<option value="5">IAS</option>
+<option value="6">Scientist</option>
+<option value="7">Business</option>
+<option value="8">Sports</option>
+</select>
+
+<button type="submit" class="ai-btn">Generate AI Career Report</button>
+
+</form>
+</div>
+</div>
+
+</body>
+</html>
