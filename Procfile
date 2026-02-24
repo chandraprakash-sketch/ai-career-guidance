@@ -1,1 +1,1 @@
-web: python uiversion.py
+web: gunicorn uiversion:app --bind 0.0.0.0:$PORT
