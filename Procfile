@@ -1,1 +1,1 @@
-web: gunicorn uiversion:app
+web: python uiversion.py
